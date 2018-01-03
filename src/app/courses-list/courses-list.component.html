@@ -1,0 +1,24 @@
+
+<form>
+    <input type="text" #newDescription placeholder="description">
+    <input type="text" #newTitle placeholder="title">
+    <input type="text" #newUrl placeholder="url">
+    <button (click)="addItem2(newDescription.value, newTitle.value, newUrl.value)">Add</button>
+  </form>
+
+<!-- <input type="text" #newitem />
+<button (click)="addItem(newitem.value)">Add</button> -->
+
+<ul>
+    <div *ngFor="let course of coursesObservable | async">
+        <ngb-alert type="info" [dismissible]="false">
+            <h3><a href="#">{{course.title}}</a> </h3>
+            <p>{{course.description}}</p>
+            <div>
+                <a href="{{course.url}}" target="_blank" class="btn btn-danger">Go To Course</a>
+            </div>
+
+            <button (click)="deleteItem(course.key)">Delete</button>
+        </ngb-alert>
+    </div>
+</ul>
