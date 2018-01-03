@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
@@ -15,9 +17,9 @@ export class CoursesListComponent implements OnInit {
   coursesObservable: Observable<any[]>;
   itemsRef: AngularFireList<any>;
 
-  // description: string;
-  // title: string;
-  // url: string;
+  description: string;
+  title: string;
+  url: string;
 
   // constructor(private db: AngularFireDatabase) {
   //   this.coursesObservable = db.list('/courses').valueChanges();
@@ -44,21 +46,17 @@ export class CoursesListComponent implements OnInit {
   // }
 
   // testing
-  addItem2(newDescription: string, newTitle: string, newUrl: string) {
+  addItem2() {
 
     this.itemsRef.push({
-      title: newTitle,
-      description: newDescription,
-      url: newUrl
+      title: this.title,
+      description: this.description,
+      url: this.url
     });
 
-    // this.description = '';
-    // this.title = '';
-    // this.url = '';
-
-    // newDescription = '';
-    // newTitle = '';
-    // newUrl = '';
+    this.description = '';
+    this.title = '';
+    this.url = '';
 
   }
 
