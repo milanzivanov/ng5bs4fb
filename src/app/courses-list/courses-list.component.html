@@ -1,9 +1,22 @@
 
-<form>
-    <input type="text" [(ngModel)]="description" name="description" placeholder="description">
-    <input type="text" [(ngModel)]='title' name="title" placeholder="title">
-    <input type="text" [(ngModel)]="url" name="url" placeholder="url">
-    <button (click)="addItem2()">Add</button>
+<form class="form-group">
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="description"
+           name="description"
+           placeholder="description">
+    <input type="text"
+           class="form-control"
+           [(ngModel)]='title'
+           name="title"
+           placeholder="title">
+    <input type="text"
+           class="form-control"
+           [(ngModel)]="url"
+           name="url"
+           placeholder="url">
+    <button class="btn btn-primary"
+            (click)="addItem2()">Add</button>
   </form>
 
 <!-- <input type="text" #newitem />
